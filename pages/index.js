@@ -10,8 +10,8 @@ return (
     <link rel='icon' href='/favicon.ico' />
    </Head>
  
- <div classname='bg-slate-100 content-center p-2'>
- <h1 className='text-3xl  font-bold'> Next Ecommerce</h1>
+ <div classname='bg-slate-500 p-2'>
+ <h1 className='text-3xl  font-bold'> Next shop</h1>
  <p> hurhyeon </p>
  </div>
   </div>
