@@ -23,7 +23,8 @@ export default function LoginScreen() {
         register,
         formState: { errors },
     } = useForm()
-const submitHandler = async ({ email, password }) => {
+
+    const submitHandler = async ({ email, password }) => {
             try {
                 const result = await signIn('credentials', {
                     redirect: false,
@@ -37,6 +38,52 @@ const submitHandler = async ({ email, password }) => {
                 toast.error(getError(err))
             }
         }
+        
+        const githubLoginHandler = async () => {
+            try {
+                const result = await signIn('github', {
+                    redirect: false,
+                        })
+                        console.log('Github login: ' + result)
+                    } catch (err) {
+                        toast.error(getError(err))
+                    }
+                }
+                
+            const googleLoginHandler = async () => {
+                    try {
+                    // eslint-disable-next-line no-unused-vars
+                    const result = await signIn('google', {
+                        redirect: false,
+                })
+                    } catch (err) {
+                        toast.error(getError(err))
+                    }
+                }
+            
+            const kakaoLoginHandler = async () => {
+                    try {
+                    // eslint-disable-next-line no-unused-vars
+                    const result = await signIn('kakao', {
+                        redirect: false,
+                    })
+                    } catch (err) {
+                        toast.error(getError(err))
+                    }
+                }
+                
+            const naverLoginHandler = async () => {
+                    try {
+                    // eslint-disable-next-line no-unused-vars
+                    const result = await signIn('naver', {
+                        redirect: false,
+                    })
+                    } catch (err) {
+                        toast.error(getError(err))
+                    }
+                }
+                    
+            
         return (
             <Layout title="Login">
             <form className="mx-auto max-w-screen-md"
@@ -77,10 +124,57 @@ const submitHandler = async ({ email, password }) => {
             <div className="mb-4">
             <button className="primary-button">Login</button>
             </div>
+
             <div className="mb-4">
             Don&apos;t have an account? &nbsp;
             <Link href="register">Register</Link>
             </div>
+            
+            <div className="p-5 bg-blue-300 rounded-lg">
+                <div className="mb-4">
+                    <button
+                    className="primary-button w-full"
+                    type="button"
+                    onClick={githubLoginHandler}
+                    >
+                        Github Login
+                    </button>
+                    </div>            
+            
+            <div className="mb-4">
+                <button
+                    className="primary-button w-full"
+                    type="button"
+                    onClick={googleLoginHandler}
+                    >
+                        Google Login
+                    </button>
+                    </div>
+                
+            <div className="mb-4">
+                <button
+                    className="primary-button w-full"
+                    type="button"
+                    onClick={kakaoLoginHandler}
+                    >
+                        Kakao Login
+                    </button>
+                    </div>
+
+            <div className="">
+                <button
+                    className="primary-button w-full"
+                    type="button"
+                    onClick={naverLoginHandler}
+                    >
+                        Naver Login
+                    </button>
+                    </div>
+
+
+                
+                
+                </div>
             </form>
             </Layout>
         )
