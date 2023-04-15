@@ -103,7 +103,7 @@ export default async function handler(req, res) {
       name: 'nsCertType',
       client: true,
       server: true,
-      email: true,
+      email: true,  
       objsign: true,
       sslCA: true,
       emailCA: true,
